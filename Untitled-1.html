@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Kumar - Amazon Ready Resume</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Roboto for a clean, professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --sidebar-bg: #1a1a1a;
+            --text-color: #ffffff;
+            --text-muted: #b0b0b0;
+            --accent-color: #007bff; /* Bright Blue */
+            --accent-hover: #0056b3;
+            --divider-color: #444;
+            --skill-bg: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #555; /* Outer background for browser */
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text-color);
+            -webkit-print-color-adjust: exact;
+        }
+
+        /* A4 Paper Dimensions */
+        .resume-container {
+            width: 210mm;
+            min-height: 297mm;
+            background-color: var(--bg-color);
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            padding: 40px;
+            position: relative;
+            display: grid;
+            grid-template-columns: 63% 37%; /* Slightly wider left column for content */
+            grid-template-rows: auto 1fr;
+            grid-column-gap: 30px;
+            overflow: hidden; 
+        }
+
+        /* --- HEADER --- */
+        .header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--divider-color);
+            padding-bottom: 20px;
+        }
+
+        .header-info h1 {
+            font-size: 32pt;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header-info .role {
+            color: var(--accent-color);
+            font-size: 14pt;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 9pt;
+            color: var(--text-muted);
+        }
+
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+        }
+
+        /* Profile Photo Styling */
+        .profile-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        /* --- COLUMNS --- */
+        .left-column {
+            grid-column: 1;
+        }
+
+        .right-column {
+            grid-column: 2;
+        }
+
+        /* --- SECTION STYLES --- */
+        h2 {
+            font-size: 14pt;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            margin-top: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--divider-color);
+            padding-bottom: 5px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 9.5pt;
+            line-height: 1.5;
+            color: #dcdcdc;
+            margin-bottom: 10px;
+        }
+
+        /* --- EXPERIENCE ITEMS --- */
+        .job-item, .edu-item, .project-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .job-title {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .company {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 10pt;
+            margin-bottom: 2px;
+        }
+
+        .meta {
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta i {
+            font-size: 8pt;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+            font-size: 9.5pt;
+            color: #dcdcdc;
+            line-height: 1.4;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--text-muted);
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- SKILLS PILLS --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background-color: transparent;
+            border: 1px solid #555;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        /* --- KEY ACHIEVEMENTS (Star Icon) --- */
+        .achievement-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .achievement-icon {
+            color: var(--accent-color);
+            font-size: 14pt;
+            margin-top: 2px;
+        }
+
+        .achievement-content h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        /* --- PRINT MEDIA QUERIES --- */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                width: 100%;
+                min-height: 100vh;
+                margin: 0;
+                page-break-after: always;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-info">
+                <h1>Mohit Kumar</h1>
+                <div class="role">Computer Science Student</div>
+                <div class="contact-info">
+                    <span><i class="fas fa-phone-alt"></i> +91 94449 21501</span>
+                    <span><i class="fas fa-envelope"></i> 24bcs076@iiitdwd.ac.in</span>
+                    <a href="https://www.linkedin.com/in/mohit-kumar-5a0590160/" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/mohit-kumar</a>
+                    <a href="https://github.com/DARK-1926/" target="_blank"><i class="fab fa-github"></i> github.com/DARK-1926</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Dharwad / Chennai</span>
+                </div>
+            </div>
+            <!-- Profile Photo -->
+            <img src="1000110441.jpg" alt="Mohit Kumar" class="profile-photo">
+        </div>
+
+        <!-- LEFT COLUMN -->
+        <div class="left-column">
+            
+            <section>
+                <h2>Professional Summary</h2>
+                <p>
+                    Computer Science undergraduate with a 9.06 CGPA and practical experience in backend development and cloud technologies. Proficient in Python, SQL, and building scalable web applications using Django and Flask. Demonstrated ability to solve complex problems through open-source contributions and hackathon projects. Eager to apply technical skills in a challenging Software Development Engineer role.
+                </p>
+            </section>
+
+            <section>
+                <h2>Experience</h2>
+                
+                <div class="job-item">
+                    <div class="job-title">Full Stack Developer (Contributor)</div>
+                    <div class="company">IIIT Dharwad Official Website</div>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 2024 - Present</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Dharwad, India</span>
+                    </div>
+                    <p>Core member of the development team managing the institute's official web presence.</p>
+                    <ul>
+                        <li>Optimized frontend performance and reduced page load latency by implementing efficient component structures using modern frameworks.</li>
+                        <li>Collaborated with a team of developers to deploy features to production, ensuring cross-browser compatibility and responsiveness.</li>
+                    </ul>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-title">Open Source Contributor</div>
+                    <div class="company">Django CRM (GitHub)</div>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 2026</span>
+                        <span><i class="fas fa-globe"></i> Open Source</span>
+                    </div>
+                    <p>Contributed to the core functionality of a popular open-source CRM system.</p>
+                    <ul>
+                        <li>Authored a "Smart Deduplication" feature to preserve data integrity when deleting duplicate city entries.</li>
+                        <li>Implemented case-insensitive checks and robust error handling logic (e.g., handling empty/None fields) to prevent data loss.</li>
+                        <li>Verified code reliability by writing comprehensive unit/integration test suites.</li>
+                    </ul>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-title">Social Media Designer</div>
+                    <div class="company">GDSC IIIT Dharwad</div>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 10/2024 - Present</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Hubli-Dharwad</span>
+                    </div>
+                    <ul>
+                        <li>Led visual branding strategies for technical events, driving a 20% increase in student engagement.</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                
+                <div class="edu-item">
+                    <div class="job-title">B.Tech in Computer Science Engineering</div>
+                    <div class="company">IIIT Dharwad</div>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> 08/2024 - 08/2028</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Dharwad, India</span>
+                    </div>
+                    <p style="color: #fff; font-weight: bold;">CGPA: 9.06</p>
+                </div>
+
+                <div class="edu-item">
+                    <div class="job-title">BS in Data Science and Applications</div>
+                    <div class="company">IIT Madras</div>
+                    <div class="meta">
+                        <span><i class="far fa-calendar-alt"></i> Present</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Online / Hybrid</span>
+                    </div>
+                    <p>Diploma Expected GPA: 9.63</p>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Certifications</h2>
+                <ul style="padding-left: 0; list-style-type: none;">
+                    <li style="margin-bottom: 8px; padding-left: 0;">:: HackerRank (Advanced SQL)</li>
+                    <li style="margin-bottom: 8px; padding-left: 0;">:: IIT Madras BS Foundation</li>
+                    <li style="margin-bottom: 8px; padding-left: 0;">:: OCI 2025 AI Foundations Associate</li>
+                    <li style="margin-bottom: 8px; padding-left: 0;">:: OCI 2025 Foundations Associate</li>
+                    <li style="margin-bottom: 8px; padding-left: 0;">:: OCI 2025 Data Science Professional</li>
+                    <li style="margin-bottom: 8px; padding-left: 0;">:: CS50 AI & CS50 Python</li>
+                </ul>
+            </section>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-column">
+            
+            <section>
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <span class="skill-tag" style="border-color: var(--accent-color);">Data Structures & Algo</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">HTML5/CSS3</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Oracle Cloud</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Git/GitHub</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">System Design</span>
+                </div>
+            </section>
+
+            <section style="margin-top: 30px;">
+                <h2>Key Achievements</h2>
+                <div class="achievement-item">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="achievement-content">
+                        <h3>Top 10 Finalist</h3>
+                        <p>Secured 8th rank in the Kerala Bio-Circular Logistics challenge by engineering a solution that optimized 945K+ kg of CO₂.</p>
+                    </div>
+                </div>
+                <div class="achievement-item">
+                    <div class="achievement-icon"><i class="fas fa-code-branch"></i></div>
+                    <div class="achievement-content">
+                        <h3>Open Source Impact</h3>
+                        <p>Merged critical features into Django CRM, enhancing data integrity for a live open-source project.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Projects</h2>
+                
+                <div class="project-item">
+                    <div class="job-title">Smart Link Hub Generator</div>
+                    <div class="meta">
+                        <span><i class="fas fa-code"></i> Next.js, Node.js, Redis, SQL</span>
+                    </div>
+                    <p style="font-size: 8.5pt; color: var(--accent-color); margin-bottom: 3px;"><i>IIT Ropar TechFest 2026 – JPD Hub Hackathon</i></p>
+                    <ul>
+                        <li>Architected a scalable link management platform with a deterministic rule engine.</li>
+                        <li>Implemented <b>caching and rate limiting</b> mechanisms to optimize system performance under high load.</li>
+                        <li>Designed a comprehensive CRUD dashboard using a clean service-controller architecture.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item" style="margin-top: 15px;">
+                    <div class="job-title">Fraud Detection Pipeline</div>
+                    <div class="meta">
+                        <span><i class="fas fa-code"></i> Python, Scikit-learn, ML</span>
+                    </div>
+                    <ul>
+                        <li>Developed a production-ready fraud detection pipeline using HistGradientBoosting.</li>
+                        <li>Implemented domain-driven feature engineering and strategic post-processing.</li>
+                        <li>Validated model robustness with 10-fold stratified cross-validation.</li>
+                    </ul>
+                </div>
+                
+                <div class="project-item" style="margin-top: 15px;">
+                    <div class="job-title">Bio-Circular Logistics System</div>
+                    <div class="meta">
+                        <span><i class="fas fa-code"></i> Python, Pandas, Optimization</span>
+                    </div>
+                    <ul>
+                        <li>Built a multi-objective optimization engine to manage transport across 250+ farms.</li>
+                        <li>Achieved <b>945K+ kg CO₂-eq</b> reduction in emissions through route optimization.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>

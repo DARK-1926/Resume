@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Kumar - Modern ATS Resume</title>
+    <style>
+        /* * MODERN ATS RESUME STYLE
+         * Designed to match the clean, parsing-friendly format of standard ATS resumes.
+         * Now includes accent colors standard in modern templates.
+         */
+        
+        :root {
+            /* Common Modern ATS Color: Deep Navy Blue */
+            --color-accent: #2e4a70; 
+            --color-text: #333333;
+            --color-headings: #2e4a70;
+            --border-color: #2e4a70;
+            --font-main: 'Arial', 'Helvetica Neue', Helvetica, sans-serif; /* Switched to Arial for better print readability on Windows */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--color-text);
+            line-height: 1.4; /* Improved readability */
+            font-size: 10.5pt; /* Slightly larger than 10pt */
+            background-color: #ffffff;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.4in; /* Balanced margins */
+        }
+
+        /* HEADER SECTION */
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color); /* Added separator for visual compactness */
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--color-accent);
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            margin-bottom: 0;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .contact-info a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 15px; /* Tightened section spacing */
+        }
+
+        h2 {
+            font-size: 11.5pt;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 8px;
+            padding-bottom: 2px;
+            letter-spacing: 0.5px;
+            color: var(--color-headings);
+        }
+
+        /* CONTENT STYLING */
+        p {
+            margin-bottom: 4px;
+            text-align: left; 
+        }
+
+        /* JOB & PROJECT HEADERS */
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-weight: 700;
+            font-size: 10.5pt;
+            margin-bottom: 0;
+            color: #000;
+        }
+
+        .entry-sub {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-style: italic;
+            font-size: 10.5pt;
+            margin-bottom: 4px;
+            color: #444;
+        }
+
+        /* LISTS */
+        ul {
+            list-style-type: disc;
+            margin-left: 16px; 
+            margin-bottom: 8px;
+        }
+
+        li {
+            margin-bottom: 2px;
+        }
+
+        /* SKILLS TABLE-LIKE DISPLAY */
+        .skills-list {
+            display: flex; /* Changed to flex for better packing */
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .skills-list .skill-category {
+            white-space: nowrap;
+            min-width: 130px;
+        }
+
+        .skill-category {
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        /* UTILITIES */
+        .bold { font-weight: 700; }
+        .italic { font-style: italic; }
+        
+        /* PRINT OPTIMIZATION */
+        @media print {
+            body {
+                padding: 0;
+                margin: 0.3in; /* Use body margin instead of @page for better compatibility */
+            }
+            a {
+                text-decoration: none;
+                color: var(--color-accent);
+            }
+            /* Ensure colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>MOHIT KUMAR</h1>
+        <div class="contact-info">
+            Dharwad, India <br>
+            <a href="mailto:24bcs076@iiitdwd.ac.in">24bcs076@iiitdwd.ac.in</a> | +91 94449 21501 <br>
+            <a href="https://linkedin.com/in/mohit-kumar">linkedin.com/in/mohit-kumar</a> | <a href="https://github.com/DARK-1926">github.com/DARK-1926</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>
+            Computer Science undergraduate with a 9.06 CGPA and practical experience in backend development and cloud technologies. Proficient in Python, SQL, and building scalable web applications using Django and Flask. Demonstrated ability to solve complex problems through open-source contributions and hackathon projects. Eager to apply technical skills in a challenging Software Development Engineer role.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-list">
+            <span class="skill-category">Languages:</span>
+            <span>Python, Java, JavaScript, Bash</span>
+        </div>
+        <div class="skills-list">
+            <span class="skill-category">Web Development:</span>
+            <span>Django, Flask, Node.js, HTML5/CSS3, Bootstrap, REST APIs</span>
+        </div>
+        <div class="skills-list">
+            <span class="skill-category">Databases & Tools:</span>
+            <span>SQL, PostgreSQL, Redis, Oracle Cloud (OCI), Docker, Git/GitHub</span>
+        </div>
+        <div class="skills-list">
+            <span class="skill-category">Core Concepts:</span>
+            <span>Data Structures & Algo, System Design, Pandas, Optimization</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Professional Experience</h2>
+
+        <!-- Job 1 -->
+        <div class="entry-header">
+            <span>Full Stack Developer (Contributor)</span>
+            <span>Jan 2024 – Present</span>
+        </div>
+        <div class="entry-sub">
+            <span>IIIT Dharwad Official Website</span>
+            <span>Dharwad, India</span>
+        </div>
+        <ul>
+            <li>Core member managing the institute's official web presence; contributed to component modularity and UI updates.</li>
+            <li>Optimized frontend performance and reduced page load latency by implementing efficient component structures using modern frameworks.</li>
+            <li>Collaborated with a team of developers to deploy features to production, ensuring cross-browser compatibility and responsiveness.</li>
+        </ul>
+
+        <!-- Job 2 -->
+        <div class="entry-header">
+            <span>Open Source Contributor</span>
+            <span>2026</span>
+        </div>
+        <div class="entry-sub">
+            <span>Django CRM (GitHub)</span>
+            <span>Remote</span>
+        </div>
+        <ul>
+            <li>Contributed to the core functionality of a popular open-source CRM system.</li>
+            <li>Authored a "Smart Deduplication" feature to preserve data integrity when deleting duplicate city entries.</li>
+            <li>Implemented case-insensitive checks and robust error handling logic (e.g., handling empty/None fields) to prevent data loss.</li>
+            <li>Verified code reliability by writing comprehensive unit/integration test suites.</li>
+        </ul>
+
+        <!-- Job 3 -->
+        <div class="entry-header">
+            <span>Social Media Designer</span>
+            <span>Oct 2024 – Present</span>
+        </div>
+        <div class="entry-sub">
+            <span>GDSC IIIT Dharwad</span>
+            <span>Hubli-Dharwad</span>
+        </div>
+        <ul>
+            <li>Led visual branding strategies for technical events, driving a 20% increase in student engagement.</li>
+            <li>Designed high-impact visual assets, event banners, and branding content, significantly increasing social media engagement.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="entry-header">
+            <span>Smart Link Hub Generator (IIT Ropar Techfest 2026)</span>
+            <span class="italic">Next.js, Node.js, Redis, SQL</span>
+        </div>
+        <ul>
+            <li>Architected a scalable link management platform with a deterministic rule engine.</li>
+            <li>Implemented caching and rate limiting mechanisms to optimize system performance under high load.</li>
+            <li>Designed a comprehensive CRUD dashboard using a clean service-controller architecture.</li>
+        </ul>
+
+        <!-- Project 2 -->
+        <div class="entry-header">
+            <span>Bio-Circular Logistics System (Top 10 Finalist)</span>
+            <span class="italic">Python, Pandas, Optimization</span>
+        </div>
+        <ul>
+            <li>Built a multi-objective optimization engine to manage transport across 250+ farms.</li>
+            <li>Achieved 945K+ kg CO₂ eq reduction in emissions through route optimization.</li>
+            <li>Secured 8th rank in the Kerala Bio-Circular Logistics challenge by engineering a viable logistics solution.</li>
+        </ul>
+
+        <!-- Project 3 -->
+        <div class="entry-header">
+            <span>Fraud Detection Pipeline</span>
+            <span class="italic">Python, Scikit-learn, ML</span>
+        </div>
+        <ul>
+            <li>Developed a production-ready fraud detection pipeline using HistGradientBoosting.</li>
+            <li>Implemented domain-driven feature engineering and strategic post-processing.</li>
+            <li>Validated model robustness with 10-fold stratified cross-validation.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Education</h2>
+
+        <div class="entry-header">
+            <span>IIIT Dharwad</span>
+            <span>Expected 2028</span>
+        </div>
+        <div class="entry-sub">
+            <span>B.Tech in Computer Science Engineering (CGPA: 9.06)</span>
+            <span>Dharwad, India</span>
+        </div>
+
+        <div style="margin-top: 8px;"></div> <!-- Spacer -->
+
+        <div class="entry-header">
+            <span>IIT Madras</span>
+            <span>Present</span>
+        </div>
+        <div class="entry-sub">
+            <span>BS in Data Science and Applications (Diploma Expected GPA: 9.63)</span>
+            <span>Online / Hybrid</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Certifications</h2>
+        <ul>
+            <li><strong>Oracle Cloud (OCI):</strong> 2025 AI Foundations Associate, 2025 Data Science Professional, 2025 Foundations Associate.</li>
+            <li><strong>Programming:</strong> HackerRank (Advanced SQL), CS50 AI & CS50 Python (Harvard University).</li>
+            <li><strong>Foundation:</strong> IIT Madras BS Foundation Certification.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
